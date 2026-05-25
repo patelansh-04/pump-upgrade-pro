@@ -9,38 +9,200 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SchemesRouteImport } from './routes/schemes'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as ServicesOnsiteRouteImport } from './routes/services.onsite'
+import { Route as ServicesMonitoringRouteImport } from './routes/services.monitoring'
+import { Route as ServicesEpcRouteImport } from './routes/services.epc'
+import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 
+const SchemesRoute = SchemesRouteImport.update({
+  id: '/schemes',
+  path: '/schemes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesOnsiteRoute = ServicesOnsiteRouteImport.update({
+  id: '/services/onsite',
+  path: '/services/onsite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesMonitoringRoute = ServicesMonitoringRouteImport.update({
+  id: '/services/monitoring',
+  path: '/services/monitoring',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesEpcRoute = ServicesEpcRouteImport.update({
+  id: '/services/epc',
+  path: '/services/epc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsSlugRoute = ProductsSlugRouteImport.update({
+  id: '/products/$slug',
+  path: '/products/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/schemes': typeof SchemesRoute
+  '/products/$slug': typeof ProductsSlugRoute
+  '/services/epc': typeof ServicesEpcRoute
+  '/services/monitoring': typeof ServicesMonitoringRoute
+  '/services/onsite': typeof ServicesOnsiteRoute
+  '/products/': typeof ProductsIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/schemes': typeof SchemesRoute
+  '/products/$slug': typeof ProductsSlugRoute
+  '/services/epc': typeof ServicesEpcRoute
+  '/services/monitoring': typeof ServicesMonitoringRoute
+  '/services/onsite': typeof ServicesOnsiteRoute
+  '/products': typeof ProductsIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/schemes': typeof SchemesRoute
+  '/products/$slug': typeof ProductsSlugRoute
+  '/services/epc': typeof ServicesEpcRoute
+  '/services/monitoring': typeof ServicesMonitoringRoute
+  '/services/onsite': typeof ServicesOnsiteRoute
+  '/products/': typeof ProductsIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/gallery'
+    | '/schemes'
+    | '/products/$slug'
+    | '/services/epc'
+    | '/services/monitoring'
+    | '/services/onsite'
+    | '/products/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/gallery'
+    | '/schemes'
+    | '/products/$slug'
+    | '/services/epc'
+    | '/services/monitoring'
+    | '/services/onsite'
+    | '/products'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/gallery'
+    | '/schemes'
+    | '/products/$slug'
+    | '/services/epc'
+    | '/services/monitoring'
+    | '/services/onsite'
+    | '/products/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
+  SchemesRoute: typeof SchemesRoute
+  ProductsSlugRoute: typeof ProductsSlugRoute
+  ServicesEpcRoute: typeof ServicesEpcRoute
+  ServicesMonitoringRoute: typeof ServicesMonitoringRoute
+  ServicesOnsiteRoute: typeof ServicesOnsiteRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/schemes': {
+      id: '/schemes'
+      path: '/schemes'
+      fullPath: '/schemes'
+      preLoaderRoute: typeof SchemesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +210,64 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/': {
+      id: '/products/'
+      path: '/products'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/onsite': {
+      id: '/services/onsite'
+      path: '/services/onsite'
+      fullPath: '/services/onsite'
+      preLoaderRoute: typeof ServicesOnsiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/monitoring': {
+      id: '/services/monitoring'
+      path: '/services/monitoring'
+      fullPath: '/services/monitoring'
+      preLoaderRoute: typeof ServicesMonitoringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/epc': {
+      id: '/services/epc'
+      path: '/services/epc'
+      fullPath: '/services/epc'
+      preLoaderRoute: typeof ServicesEpcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/$slug': {
+      id: '/products/$slug'
+      path: '/products/$slug'
+      fullPath: '/products/$slug'
+      preLoaderRoute: typeof ProductsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
+  SchemesRoute: SchemesRoute,
+  ProductsSlugRoute: ProductsSlugRoute,
+  ServicesEpcRoute: ServicesEpcRoute,
+  ServicesMonitoringRoute: ServicesMonitoringRoute,
+  ServicesOnsiteRoute: ServicesOnsiteRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
