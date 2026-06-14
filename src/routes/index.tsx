@@ -116,7 +116,7 @@ function Index() {
         </div>
       </section>
 
-      {/* SCHEME BAND */}
+      {/* SCHEME BAND
       <section className="bg-charcoal text-white">
         <div className="container-x grid items-center gap-8 py-16 md:grid-cols-2">
           <div className="flex flex-wrap gap-3">
@@ -129,14 +129,14 @@ function Index() {
             <Link to="/schemes" className="btn-primary mt-6">Check Scheme Eligibility <ArrowRight className="size-4" /></Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* TRUSTED BY */}
-      <section className="section-y">
+      <section className="bg-charcoal section-y">
         <div className="container-x">
           <div className="text-center">
             <div className="eyebrow">Trusted By</div>
-            <h2 className="mt-2 font-display text-2xl font-semibold text-charcoal md:text-3xl">India's leading solar companies</h2>
+            <h2 className="mt-2 font-display text-2xl font-semibold text-white md:text-3xl">India's leading solar companies</h2>
           </div>
           <div className="mt-10 grid grid-cols-2 items-center gap-8 md:grid-cols-5">
             {["Tata Power Solar", "EMMVEE", "MNRE", "PM KUSUM", "ISO 9001:2015"].map((l) => (

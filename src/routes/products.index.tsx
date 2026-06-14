@@ -31,7 +31,7 @@ function ProductsIndex() {
         </div>
       </section>
 
-      <section className="alt-bg section-y">
+      {/* <section className="alt-bg section-y">
         <div className="container-x">
           <h2 className="font-display text-2xl font-semibold text-charcoal md:text-3xl">Conventional Range</h2>
           <p className="mt-2 text-muted-foreground">Grid-powered agriculture, domestic and industrial pumps.</p>
@@ -39,7 +39,7 @@ function ProductsIndex() {
             {legacy.map((p) => <ProductCard key={p.slug} product={p} />)}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

@@ -9,8 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SchemesRouteImport } from './routes/schemes'
-import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -21,16 +19,6 @@ import { Route as ServicesMonitoringRouteImport } from './routes/services.monito
 import { Route as ServicesEpcRouteImport } from './routes/services.epc'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 
-const SchemesRoute = SchemesRouteImport.update({
-  id: '/schemes',
-  path: '/schemes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -81,8 +69,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
-  '/schemes': typeof SchemesRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/epc': typeof ServicesEpcRoute
   '/services/monitoring': typeof ServicesMonitoringRoute
@@ -94,8 +80,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
-  '/schemes': typeof SchemesRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/epc': typeof ServicesEpcRoute
   '/services/monitoring': typeof ServicesMonitoringRoute
@@ -108,8 +92,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
-  '/schemes': typeof SchemesRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/epc': typeof ServicesEpcRoute
   '/services/monitoring': typeof ServicesMonitoringRoute
@@ -123,8 +105,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/gallery'
-    | '/schemes'
     | '/products/$slug'
     | '/services/epc'
     | '/services/monitoring'
@@ -136,8 +116,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/gallery'
-    | '/schemes'
     | '/products/$slug'
     | '/services/epc'
     | '/services/monitoring'
@@ -149,8 +127,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/gallery'
-    | '/schemes'
     | '/products/$slug'
     | '/services/epc'
     | '/services/monitoring'
@@ -163,8 +139,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  GalleryRoute: typeof GalleryRoute
-  SchemesRoute: typeof SchemesRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
   ServicesEpcRoute: typeof ServicesEpcRoute
   ServicesMonitoringRoute: typeof ServicesMonitoringRoute
@@ -175,20 +149,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/schemes': {
-      id: '/schemes'
-      path: '/schemes'
-      fullPath: '/schemes'
-      preLoaderRoute: typeof SchemesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -259,8 +219,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  GalleryRoute: GalleryRoute,
-  SchemesRoute: SchemesRoute,
   ProductsSlugRoute: ProductsSlugRoute,
   ServicesEpcRoute: ServicesEpcRoute,
   ServicesMonitoringRoute: ServicesMonitoringRoute,

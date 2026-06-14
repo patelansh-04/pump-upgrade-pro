@@ -23,6 +23,7 @@ export type Product = {
 };
 
 export const PRODUCTS: Product[] = [
+  //solar-submersible-dc
   {
     slug: "solar-submersible-dc",
     name: "Solar Submersible Pumpset (DC/PMSM)",
@@ -58,6 +59,7 @@ export const PRODUCTS: Product[] = [
     ],
     related: ["solar-controller", "solar-submersible-ac", "solar-surface"],
   },
+  // solar-submersible-ac
   {
     slug: "solar-submersible-ac",
     name: "Solar Submersible Pumpset (AC)",
@@ -93,6 +95,7 @@ export const PRODUCTS: Product[] = [
     ],
     related: ["solar-controller", "solar-submersible-dc", "solar-surface"],
   },
+  // solar-surface
   {
     slug: "solar-surface",
     name: "Solar Surface Pumpset",
@@ -128,6 +131,7 @@ export const PRODUCTS: Product[] = [
     ],
     related: ["solar-controller", "solar-submersible-dc", "industrial-range"],
   },
+  // solar-controller
   {
     slug: "solar-controller",
     name: "Solar Pump Controller",
@@ -173,6 +177,7 @@ export const PRODUCTS: Product[] = [
     ],
     related: ["solar-submersible-dc", "solar-submersible-ac", "solar-surface"],
   },
+  // agriculture-range
   {
     slug: "agriculture-range",
     name: "Agriculture Range (Legacy)",
@@ -206,6 +211,7 @@ export const PRODUCTS: Product[] = [
     ],
     related: ["domestic-range", "industrial-range", "solar-submersible-ac"],
   },
+  // domestic-range
   {
     slug: "domestic-range",
     name: "Domestic Range",

@@ -26,19 +26,19 @@ export function SiteFooter() {
 
         <FooterCol title="Products" links={[
           { to: "/products/solar-submersible-dc", label: "Solar Submersible DC/PMSM" },
-          { to: "/products/solar-submersible-ac", label: "Solar Submersible AC" },
+          { to: "/products/solar-submersible-ac", label: "Changeover Controllers" },
           { to: "/products/solar-surface", label: "Solar Surface" },
-          { to: "/products/solar-controller", label: "Solar Controller" },
-          { to: "/products/agriculture-range", label: "Agriculture Range" },
-          { to: "/products/domestic-range", label: "Domestic Range" },
-          { to: "/products/industrial-range", label: "Industrial Range" },
+          { to: "/products/solar-controller", label: "Solar Controllers" },
+          // { to: "/products/agriculture-range", label: "Agriculture Range" },
+          // { to: "/products/domestic-range", label: "Domestic Range" },
+          // { to: "/products/industrial-range", label: "Industrial Range" },
         ]} />
 
         <FooterCol title="Services" links={[
           { to: "/services/monitoring", label: "Mobile App & RMS" },
           { to: "/services/epc", label: "EPC Projects" },
           { to: "/services/onsite", label: "Onsite Service" },
-          { to: "/schemes", label: "Government Schemes" },
+          // { to: "/schemes", label: "Government Schemes" },
         ]} />
 
         <FooterCol title="Quick Links" links={[

@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { site } from "@/data/site";
@@ -9,8 +9,6 @@ const NAV = [
   { to: "/about", label: "About" },
   { to: "/products", label: "Products", mega: true },
   { to: "/services", label: "Services", drop: true },
-  { to: "/schemes", label: "Schemes" },
-  { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -24,6 +22,10 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMega, setOpenMega] = useState<string | null>(null);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  // Only use transparent header on homepage when not scrolled
+  const isTransparent = isHomePage && !scrolled && !mobileOpen;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -41,15 +43,15 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all ${
-        scrolled || mobileOpen
-          ? "bg-white shadow-[0_2px_20px_rgba(0,0,0,0.08)]"
-          : "bg-transparent"
+        isTransparent
+          ? "bg-transparent"
+          : "bg-white shadow-[0_2px_20px_rgba(0,0,0,0.08)]"
       }`}
       onMouseLeave={() => setOpenMega(null)}
     >
       <div className="container-x flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-          <Logo light={!scrolled && !mobileOpen} />
+          <Logo light={isTransparent} />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -59,7 +61,7 @@ export function SiteHeader() {
                 to={item.to}
                 activeOptions={{ exact: item.to === "/" }}
                 className={`flex items-center gap-1 px-3 py-2 font-display text-[15px] font-medium transition ${
-                  scrolled || mobileOpen ? "text-charcoal" : "text-white"
+                  isTransparent ? "text-white" : "text-charcoal"
                 }`}
                 activeProps={{ className: "!text-primary border-b-2 border-primary" }}
               >
@@ -105,7 +107,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a href={`tel:${site.phoneRaw}`} className={`flex items-center gap-2 text-sm font-medium ${scrolled || mobileOpen ? "text-charcoal" : "text-white"}`}>
+          <a href={`tel:${site.phoneRaw}`} className={`flex items-center gap-2 text-sm font-medium ${isTransparent ? "text-white" : "text-charcoal"}`}>
             <Phone className="size-4" /> {site.phone}
           </a>
           <Link to="/contact" className="btn-primary py-2.5">Get a Quote</Link>
@@ -113,7 +115,7 @@ export function SiteHeader() {
 
         <button
           aria-label="Toggle menu"
-          className={`lg:hidden ${scrolled || mobileOpen ? "text-charcoal" : "text-white"}`}
+          className={`lg:hidden ${isTransparent ? "text-white" : "text-charcoal"}`}
           onClick={() => setMobileOpen((v) => !v)}
         >
           {mobileOpen ? <X className="size-7" /> : <Menu className="size-7" />}
