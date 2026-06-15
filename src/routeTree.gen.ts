@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
@@ -22,6 +24,16 @@ import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -68,6 +80,8 @@ const ProductsSlugRoute = ProductsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/epc': typeof ServicesEpcRoute
@@ -79,6 +93,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/epc': typeof ServicesEpcRoute
@@ -91,6 +107,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/epc': typeof ServicesEpcRoute
@@ -104,6 +122,8 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/admin'
+    | '/careers'
     | '/contact'
     | '/products/$slug'
     | '/services/epc'
@@ -115,6 +135,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/admin'
+    | '/careers'
     | '/contact'
     | '/products/$slug'
     | '/services/epc'
@@ -126,6 +148,8 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/admin'
+    | '/careers'
     | '/contact'
     | '/products/$slug'
     | '/services/epc'
@@ -138,6 +162,8 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
+  CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
   ServicesEpcRoute: typeof ServicesEpcRoute
@@ -154,6 +180,20 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -218,6 +258,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
+  CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   ProductsSlugRoute: ProductsSlugRoute,
   ServicesEpcRoute: ServicesEpcRoute,

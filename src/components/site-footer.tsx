@@ -44,6 +44,7 @@ export function SiteFooter() {
         <FooterCol title="Quick Links" links={[
           { to: "/about", label: "About Us" },
           { to: "/gallery", label: "Gallery" },
+          { to: "/careers", label: "Careers" },
           { to: "/contact", label: "Contact" },
           { to: "/contact", label: "Request Quote" },
           { to: "/contact", label: "Become a Dealer" },
@@ -54,6 +55,7 @@ export function SiteFooter() {
         <div className="container-x flex flex-col items-center justify-between gap-3 py-5 text-xs text-white/60 md:flex-row">
           <div>© {new Date().getFullYear()} Paarth Solar Pumps Pvt. Ltd. All rights reserved.</div>
           <div className="flex gap-5">
+            <Link to="/admin" className="hover:text-white">Admin Portal</Link>
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Terms & Conditions</a>
           </div>
