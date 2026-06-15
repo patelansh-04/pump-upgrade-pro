@@ -178,108 +178,110 @@ export const PRODUCTS: Product[] = [
     related: ["solar-submersible-dc", "solar-submersible-ac", "solar-surface"],
   },
   // agriculture-range
-  {
-    slug: "agriculture-range",
-    name: "Agriculture Range (Legacy)",
-    category: "Legacy",
-    image: agri,
-    valueProp: "V4, V6, V8 submersibles — the workhorses since 1991.",
-    hpRange: "0.5–25 HP",
-    hpAvailable: [0.5, 1, 1.5, 2, 3, 5, 7.5, 10, 12.5, 15, 20, 25],
-    shortDesc: "Oil-filled and water-filled grid-powered borewell pumps for farms.",
-    description: {
-      farmer:
-        "Our original agricultural pump line. Runs on grid power or generator. Built for everyday irrigation in V4, V6 and V8 borewell sizes.",
-      engineer:
-        "Multi-stage radial-flow borewell submersibles. Oil-filled variants for high-temperature wells; water-filled variants for deep-set installations. Stainless and cast-iron wet-end options.",
-    },
-    specs: [
-      { label: "Type", value: "V4 Oil / V4 Water / V6 K&Q / V8 Water filled" },
-      { label: "Sizes", value: "0.5 – 25 HP across the four variants" },
-      { label: "Efficiency", value: ">60% (V4 oil-filled latest revision)" },
-      { label: "Application", value: "Agriculture, deep borewell, livestock" },
-      { label: "Materials", value: "SS / Cast Iron / Noryl impeller options" },
-      { label: "Warranty", value: "2 years standard, extendable" },
-    ],
-    features: [
-      { title: "Four borewell sizes", desc: "Fits 4\", 6\" and 8\" casings." },
-      { title: "Single & three-phase", desc: "Matches what's available on your line." },
-      { title: "Robust thrust bearing", desc: "Handles vertical load across long sets." },
-      { title: "Replaceable wear rings", desc: "Restorable efficiency at service intervals." },
-      { title: "Choice of impeller", desc: "SS, brass or Noryl by water condition." },
-      { title: "200+ engineer support", desc: "Service across India." },
-    ],
-    related: ["domestic-range", "industrial-range", "solar-submersible-ac"],
-  },
+  // {
+  //   slug: "agriculture-range",
+  //   name: "Agriculture Range (Legacy)",
+  //   category: "Legacy",
+  //   image: agri,
+  //   valueProp: "V4, V6, V8 submersibles — the workhorses since 1991.",
+  //   hpRange: "0.5–25 HP",
+  //   hpAvailable: [0.5, 1, 1.5, 2, 3, 5, 7.5, 10, 12.5, 15, 20, 25],
+  //   shortDesc: "Oil-filled and water-filled grid-powered borewell pumps for farms.",
+  //   description: {
+  //     farmer:
+  //       "Our original agricultural pump line. Runs on grid power or generator. Built for everyday irrigation in V4, V6 and V8 borewell sizes.",
+  //     engineer:
+  //       "Multi-stage radial-flow borewell submersibles. Oil-filled variants for high-temperature wells; water-filled variants for deep-set installations. Stainless and cast-iron wet-end options.",
+  //   },
+  //   specs: [
+  //     { label: "Type", value: "V4 Oil / V4 Water / V6 K&Q / V8 Water filled" },
+  //     { label: "Sizes", value: "0.5 – 25 HP across the four variants" },
+  //     { label: "Efficiency", value: ">60% (V4 oil-filled latest revision)" },
+  //     { label: "Application", value: "Agriculture, deep borewell, livestock" },
+  //     { label: "Materials", value: "SS / Cast Iron / Noryl impeller options" },
+  //     { label: "Warranty", value: "2 years standard, extendable" },
+  //   ],
+  //   features: [
+  //     { title: "Four borewell sizes", desc: "Fits 4\", 6\" and 8\" casings." },
+  //     { title: "Single & three-phase", desc: "Matches what's available on your line." },
+  //     { title: "Robust thrust bearing", desc: "Handles vertical load across long sets." },
+  //     { title: "Replaceable wear rings", desc: "Restorable efficiency at service intervals." },
+  //     { title: "Choice of impeller", desc: "SS, brass or Noryl by water condition." },
+  //     { title: "200+ engineer support", desc: "Service across India." },
+  //   ],
+  //   related: ["domestic-range", "industrial-range", "solar-submersible-ac"],
+  // },
   // domestic-range
-  {
-    slug: "domestic-range",
-    name: "Domestic Range",
-    category: "Legacy",
-    image: domestic,
-    valueProp: "Reliable home water pumps — monosets, suction, shallow-well.",
-    hpRange: "0.5–2 HP",
-    hpAvailable: [0.5, 1, 1.5, 2],
-    shortDesc: "Self-priming, monoset and shallow-well pumps for homes and small buildings.",
-    description: {
-      farmer:
-        "Pumps to lift water from your overhead tank, sump or shallow well at home. Quiet, compact and built to run for years.",
-      engineer:
-        "Single-phase, capacitor-start centrifugal pumps. Vertical and horizontal monoset variants; self-priming suction variants; shallow-well jet types up to 9 m suction.",
-    },
-    specs: [
-      { label: "Type", value: "Self-priming / Magic suction / Monoset (V/H) / Shallow well" },
-      { label: "Flow Rate", value: "Up to 4,200 LPH" },
-      { label: "Max Head", value: "Up to 45 m" },
-      { label: "Power", value: "0.5 – 2 HP" },
-      { label: "Application", value: "Domestic, low-rise residential" },
-      { label: "Body Material", value: "Cast iron / aluminium" },
-      { label: "Warranty", value: "1 year" },
-    ],
-    features: [
-      { title: "Self-prime to 8 m", desc: "Handles air-bound suction lines." },
-      { title: "Compact footprint", desc: "Fits under sinks and on roof tanks." },
-      { title: "Low noise operation", desc: "Resin-bonded stator damps vibration." },
-      { title: "Thermal cut-off", desc: "Protects motor on overheat." },
-      { title: "Stainless impeller option", desc: "For chlorinated municipal water." },
-      { title: "Easy seal replacement", desc: "Service in 15 minutes." },
-    ],
-    related: ["agriculture-range", "industrial-range", "solar-surface"],
-  },
-  {
-    slug: "industrial-range",
-    name: "Industrial Range",
-    category: "Legacy",
-    image: industrial,
-    valueProp: "Induction motors, inline pumps and panels for plant use.",
-    hpRange: "1–50 HP",
-    hpAvailable: [1, 2, 3, 5, 7.5, 10, 15, 20, 25, 30, 40, 50],
-    shortDesc: "Three-phase induction motors, vertical/horizontal inline pumps, control panels.",
-    description: {
-      farmer:
-        "Heavier pumps and motors for factories, water-supply schemes and large buildings — sized and built for continuous duty.",
-      engineer:
-        "IE2/IE3 squirrel-cage motors, vertical and horizontal multi-stage inline pumps with mechanical seals, IP54 control panels with motor protection relays.",
-    },
-    specs: [
-      { label: "Type", value: "Single/3-Phase Induction Motor / Vertical & Horizontal Inline / Panel" },
-      { label: "Power Range", value: "1 – 50 HP" },
-      { label: "Phase", value: "1Φ and 3Φ" },
-      { label: "Application", value: "Industrial, HVAC, water-supply schemes" },
-      { label: "Frame", value: "IEC standard frames" },
-      { label: "Efficiency Class", value: "IE2 / IE3" },
-      { label: "Warranty", value: "2 years" },
-    ],
-    features: [
-      { title: "IE2 / IE3 efficiency", desc: "Lower lifetime running cost." },
-      { title: "Continuous-duty S1", desc: "Built for 24×7 plant use." },
-      { title: "Mechanical seal", desc: "No packing-gland leakage." },
-      { title: "Panel + pump bundles", desc: "Single supplier, single warranty." },
-      { title: "IP54 enclosure", desc: "Dust and splash protected." },
-      { title: "Class F insulation", desc: "Handles elevated ambient temperatures." },
-    ],
-    related: ["agriculture-range", "domestic-range", "solar-controller"],
-  },
+  // {
+  //   slug: "domestic-range",
+  //   name: "Domestic Range",
+  //   category: "Legacy",
+  //   image: domestic,
+  //   valueProp: "Reliable home water pumps — monosets, suction, shallow-well.",
+  //   hpRange: "0.5–2 HP",
+  //   hpAvailable: [0.5, 1, 1.5, 2],
+  //   shortDesc: "Self-priming, monoset and shallow-well pumps for homes and small buildings.",
+  //   description: {
+  //     farmer:
+  //       "Pumps to lift water from your overhead tank, sump or shallow well at home. Quiet, compact and built to run for years.",
+  //     engineer:
+  //       "Single-phase, capacitor-start centrifugal pumps. Vertical and horizontal monoset variants; self-priming suction variants; shallow-well jet types up to 9 m suction.",
+  //   },
+  //   specs: [
+  //     { label: "Type", value: "Self-priming / Magic suction / Monoset (V/H) / Shallow well" },
+  //     { label: "Flow Rate", value: "Up to 4,200 LPH" },
+  //     { label: "Max Head", value: "Up to 45 m" },
+  //     { label: "Power", value: "0.5 – 2 HP" },
+  //     { label: "Application", value: "Domestic, low-rise residential" },
+  //     { label: "Body Material", value: "Cast iron / aluminium" },
+  //     { label: "Warranty", value: "1 year" },
+  //   ],
+  //   features: [
+  //     { title: "Self-prime to 8 m", desc: "Handles air-bound suction lines." },
+  //     { title: "Compact footprint", desc: "Fits under sinks and on roof tanks." },
+  //     { title: "Low noise operation", desc: "Resin-bonded stator damps vibration." },
+  //     { title: "Thermal cut-off", desc: "Protects motor on overheat." },
+  //     { title: "Stainless impeller option", desc: "For chlorinated municipal water." },
+  //     { title: "Easy seal replacement", desc: "Service in 15 minutes." },
+  //   ],
+  //   related: ["agriculture-range", "industrial-range", "solar-surface"],
+  // },
+
+  //Industrial Range
+  // {
+  //   slug: "industrial-range",
+  //   name: "Industrial Range",
+  //   category: "Legacy",
+  //   image: industrial,
+  //   valueProp: "Induction motors, inline pumps and panels for plant use.",
+  //   hpRange: "1–50 HP",
+  //   hpAvailable: [1, 2, 3, 5, 7.5, 10, 15, 20, 25, 30, 40, 50],
+  //   shortDesc: "Three-phase induction motors, vertical/horizontal inline pumps, control panels.",
+  //   description: {
+  //     farmer:
+  //       "Heavier pumps and motors for factories, water-supply schemes and large buildings — sized and built for continuous duty.",
+  //     engineer:
+  //       "IE2/IE3 squirrel-cage motors, vertical and horizontal multi-stage inline pumps with mechanical seals, IP54 control panels with motor protection relays.",
+  //   },
+  //   specs: [
+  //     { label: "Type", value: "Single/3-Phase Induction Motor / Vertical & Horizontal Inline / Panel" },
+  //     { label: "Power Range", value: "1 – 50 HP" },
+  //     { label: "Phase", value: "1Φ and 3Φ" },
+  //     { label: "Application", value: "Industrial, HVAC, water-supply schemes" },
+  //     { label: "Frame", value: "IEC standard frames" },
+  //     { label: "Efficiency Class", value: "IE2 / IE3" },
+  //     { label: "Warranty", value: "2 years" },
+  //   ],
+  //   features: [
+  //     { title: "IE2 / IE3 efficiency", desc: "Lower lifetime running cost." },
+  //     { title: "Continuous-duty S1", desc: "Built for 24×7 plant use." },
+  //     { title: "Mechanical seal", desc: "No packing-gland leakage." },
+  //     { title: "Panel + pump bundles", desc: "Single supplier, single warranty." },
+  //     { title: "IP54 enclosure", desc: "Dust and splash protected." },
+  //     { title: "Class F insulation", desc: "Handles elevated ambient temperatures." },
+  //   ],
+  //   related: ["agriculture-range", "domestic-range", "solar-controller"],
+  // },
 ];
 
 export const getProduct = (slug: string) => PRODUCTS.find((p) => p.slug === slug);
